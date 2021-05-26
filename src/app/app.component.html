@@ -1,0 +1,23 @@
+<div class="container">  
+    
+  <h1> Display Data from Json File in Angular 9 </h1>  
+    
+  <table class="table table-striped">  
+    <thead>  
+        <tr>  
+          <th>COMPANYID</th>  
+          <th>TEL</th>  
+          <th>ADDRESS</th>  
+          <th>cOMPANY NAME</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let employee of employees">  
+        <td>{{ employee.companyId }}</td>  
+        <td>{{ employee.tel }}</td>  
+        <td>{{ employee.address }}</td>  
+        <td>{{ employee.companyName }}</td>  
+      </tr>  
+    </tbody>  
+  </table>  
+</div>  
