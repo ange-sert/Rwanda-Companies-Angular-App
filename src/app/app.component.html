@@ -1,7 +1,10 @@
 <div class="container">  
     
-  <h1> Display Data from Json File in Angular 9 </h1>  
-    
+  <h1> Company Dashboard </h1>  
+  <nav class = "navbar">
+    <input class="form-control" type="text" name="companyName" [(ngModel)]="companyName" (ngModelChange)="Search()"
+    placeholder="Enter company name to search">
+  </nav>
   <table class="table table-striped">  
     <thead>  
         <tr>  
@@ -12,11 +15,11 @@
         </tr>  
     </thead>  
     <tbody>  
-      <tr *ngFor="let employee of employees">  
-        <td>{{ employee.companyId }}</td>  
-        <td>{{ employee.tel }}</td>  
-        <td>{{ employee.address }}</td>  
-        <td>{{ employee.companyName }}</td>  
+      <tr *ngFor="let company of companies">  
+        <td>{{ company.companyId }}</td>  
+        <td>{{ company.tel }}</td>  
+        <td>{{ company.address }}</td>  
+        <td>{{ company.companyName }}</td>  
       </tr>  
     </tbody>  
   </table>  

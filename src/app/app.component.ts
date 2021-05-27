@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import EmployeesData from './employees.json';
+import { Companies } from './companies';
+import companiesData from './employees.json';  
 
-interface Employee {
-  companyId: Number;
-  tel: String;
-  address: String;
-  companyName: String;
+
+interface company {
+  companyId: string;
+  tel: string;
+  address: string;
+  companyName: string;
 } 
+ 
 
 @Component({
   selector: 'app-root',
@@ -14,6 +17,22 @@ interface Employee {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Rwanda-Companies';
-  employees: Employee[] = EmployeesData;
+  companies: company[] = companiesData;
+  companyName: any;
+  title: any;
+
+  Search() {
+    if (this.companyName == '') {
+      this.ngOnInit();
+    } else {
+      this.companies = this.companies.filter((res) => {
+        return res.companyName
+          .toLocaleLowerCase()
+          .match(this.companyName.toLocaleLowerCase());
+      });
+    }
+  }
+  ngOnInit() {
+    throw new Error('Method not implemented.');
+  }
 }
