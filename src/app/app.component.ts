@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Companies } from './companies';
 import companiesData from './employees.json';  
 
 
